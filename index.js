@@ -73,7 +73,7 @@ logos = [
   },
 ];
 
-const apiKey = "4cb9fda888180aa654d28f297252b3a3";
+const apiKey = "YOUR_API_KEY";
 const body = document.querySelector("body");
 body.style.opacity = "0.3";
 let cityName = "";
@@ -285,17 +285,14 @@ function searchData(e) {
     let urlByCity = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=metric&appid=${apiKey}`;
     fetch(urlByCity)
       .then((response) => {
-        if(response.ok)
-        return response.json();
-        else if(response.status == 404)
-        {
+        if (response.ok) return response.json();
+        else if (response.status == 404) {
           alert("Sorry! City Not Found :(");
-          body.style.opacity="1";
-          locationName.value="";
+          body.style.opacity = "1";
+          locationName.value = "";
           return Promise.reject("error 404 !");
         }
-      }
-      )
+      })
       .then((cityData) => {
         let lat = cityData.coord.lat;
         let lon = cityData.coord.lon;
@@ -342,7 +339,7 @@ function searchData(e) {
           );
         }, 1000);
       })
-      .catch(error => console.log("Error Occured."));
+      .catch((error) => console.log("Error Occured."));
   }
 }
 
@@ -440,13 +437,11 @@ for (let i = 0; i < cities.length; i++) {
     let urlByCity = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=metric&appid=${apiKey}`;
     fetch(urlByCity)
       .then((response) => {
-        if(response.ok)
-        return response.json();
-        else if(response.status == 404)
-        {
+        if (response.ok) return response.json();
+        else if (response.status == 404) {
           alert("Sorry! City Not Found :(");
-          body.style.opacity="1";
-          locationName.value="";
+          body.style.opacity = "1";
+          locationName.value = "";
           return Promise.reject("error 404 !");
         }
       })
