@@ -73,7 +73,7 @@ logos = [
   },
 ];
 
-const apiKey = "YOUR_API_KEY";
+const apiKey = "4cb9fda888180aa654d28f297252b3a3";
 const body = document.querySelector("body");
 body.style.opacity = "0.3";
 let cityName = "";
